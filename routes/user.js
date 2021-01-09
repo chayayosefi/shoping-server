@@ -35,7 +35,7 @@ router.post('/open_cart', verifyUser, async (req, res) => {
     }
 })
 
-router.put('/delete_cart/:id', async (req, res) => {
+router.put('/delete_cart/:id', verifyUser, async (req, res) => {
     if (req.params.id) {
         // console.log(id)
         try {
