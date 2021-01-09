@@ -2,7 +2,9 @@ const exp = require('express')
 
 require('./db')
 
-const app = exp()
+const app = exp();
+
+const port = process.env.PORT || 1000;
 
 app.use(exp.json())
 app.use(require('cors')())
@@ -11,4 +13,4 @@ app.use('/user', require('./routes/user'))
 app.use('/main', require('./routes/main'))
 app.use('/actions', require('./routes/actions'))
 
-app.listen(1000, () => console.log("The server is running on port 1000 "))
+app.listen(port, () => console.log(`The server is running on port ${port}`));
