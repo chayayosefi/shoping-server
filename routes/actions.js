@@ -88,7 +88,7 @@ router.get('/allProducts', async (req, res) => {
 
 router.get('/allOrders', async (req, res) => {
     try {
-                const result = await Order.countDocuments({})
+        const result = await Order.countDocuments({})
         res.json(result)
     } catch (err) {
         res.status(500).json(err)
